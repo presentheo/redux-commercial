@@ -1,39 +1,25 @@
 import React, { Component } from 'react';
-import Product from './Product';
+import ProductCard from './ProductCard';
 
 class ProductList extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      propductData: [
-        {title: 'shirts'},
-        {title: 'glasses'},
-        {title: 'cap'}
-      ]
-    }
-  }
-
-  handleClick = () => {
-    
-  }
-
   render() {
     const mapToComponent = (data) => {
-      return data.map((el, i) => {
+      return data.map((item, index) => {
         return (
-          <Product
-            title={el.title}
-            key={i}
-            onClick={this.handleClick}
-          ></Product>
+          <li key={index}>
+            <ProductCard
+              name={item.name}
+              price={item.price}
+              onAddToCart={this.props.onAddToCart}/>
+          </li>
         )
       }) 
     }
     return (
-      <div>
-        {mapToComponent(this.state.propductData)}
-      </div>
+      <ul style={{'width':'40%', 'float':'left', 'margin':'20px', 'padding':'20px', 'border':'1px solid #000'}}>
+        {mapToComponent(this.props.productData)}
+      </ul>
     );
   }
 }

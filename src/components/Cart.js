@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 
 class Cart extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      itemList: [
-        {title: 'pants'}
-      ]
-    }
-  }
   render() {
-
     const mapToComponent = (data) => {
-      return data.map((el, i) => {
+      return data.map((item, index) => {
         return (
-          <div key={i}>
-            <h4>{el.title}</h4>
-          </div>
+          <li key={index}>
+            <h4>{item.name}</h4>
+            <span>{item.price}</span>
+            <button onClick={() => {this.props.onRemoveFromCart(index)}}>remove</button>
+          </li>
         )
       })
     }
     return (
-      <div>
-        {mapToComponent(this.state.itemList)}
+      <div style={{'width':'40%', 'float':'left', 'margin':'20px', 'padding':'20px', 'border':'1px solid #000'}}>
+        {mapToComponent(this.props.cartData)}
       </div>
     );
   }
