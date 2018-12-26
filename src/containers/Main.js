@@ -4,6 +4,7 @@ import * as actions from '../actions';
 import Cart from '../components/Cart';
 import ProductList from '../components/ProductList';
 import Header from '../components/Header';
+import Drawer from '../components/Drawer';
 
 class Main extends Component {
   render() {
@@ -12,6 +13,7 @@ class Main extends Component {
         <Header
           count={this.props.cartData.length}/>
         <div className='main-visual'></div>
+        <Drawer/>
         <Cart 
           cartData={this.props.cartData}
           onRemoveFromCart={(index) => this.props.onRemoveFromCart(index)}/>
