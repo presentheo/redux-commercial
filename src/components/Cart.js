@@ -14,7 +14,7 @@ class Cart extends Component {
       })
     }
     return (
-      <div style={{'width':'40%', 'float':'left', 'margin':'20px', 'padding':'20px', 'border':'1px solid #000'}}>
+      <div>
         {mapToComponent(this.props.cartData)}
       </div>
     );

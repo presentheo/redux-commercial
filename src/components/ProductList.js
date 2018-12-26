@@ -1,5 +1,20 @@
 import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
 import ProductCard from './ProductCard';
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+});
 
 class ProductList extends Component {
 
@@ -7,21 +22,27 @@ class ProductList extends Component {
     const mapToComponent = (data) => {
       return data.map((item, index) => {
         return (
-          <li key={index}>
-            <ProductCard
-              name={item.name}
-              price={item.price}
-              onAddToCart={this.props.onAddToCart}/>
-          </li>
+          <Grid
+            item xs={2}
+            key={index}>
+            <Paper>
+              <ProductCard
+                name={item.name}
+                price={item.price}
+                onAddToCart={this.props.onAddToCart}/>
+            </Paper>
+          </Grid>
         )
       }) 
     }
     return (
-      <ul style={{'width':'40%', 'float':'left', 'margin':'20px', 'padding':'20px', 'border':'1px solid #000'}}>
-        {mapToComponent(this.props.productData)}
+      <ul className='product-list'>
+        <Grid container spacing={24}>
+          {mapToComponent(this.props.productData)}
+        </Grid>
       </ul>
     );
   }
 }
 
-export default ProductList;
+export default withStyles(styles)(ProductList);

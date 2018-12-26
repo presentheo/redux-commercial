@@ -18,7 +18,7 @@ const styles = {
 };
 
 function ProductCard(props) {
-  const { classes } = props;
+  const { classes, name, price, onAddToCart } = props;
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -29,20 +29,19 @@ function ProductCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizards
+            {name}
           </Typography>
           <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {price}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
+        <Button 
+          size="small" 
+          color="primary"
+          onClick={() => onAddToCart({name:name, price:price})}>
+          add to cart
         </Button>
       </CardActions>
     </Card>
