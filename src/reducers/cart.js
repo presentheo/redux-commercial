@@ -3,8 +3,9 @@ import * as types from '../actions/ActionTypes';
 const initialState = {
   cartData : [
     {
-      name: 'Covernat Benchdown',
-      price: 250000
+      name: 'LOVE YOURSELF',
+      creator: '방탄소년단',
+      price: 25000
     }
   ]
 }

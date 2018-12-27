@@ -1,16 +1,19 @@
 const initialState = {
   productData : [
     {
-      name: 'Covernat Boa Parka',
-      price: 250000
-    },
-    {
-      name: 'Mahagrid T-shirts',
+      name: 'Supermassive Blackhole',
+      creator: 'Muse',
       price: 25000
     },
     {
-      name: 'LMC Pupper',
-      price: 250000
+      name: 'Bohemian Rhapsody',
+      creator: 'Queen',
+      price: 25000
+    },
+    {
+      name: 'NEW CHAPTER #2: THE TRUTH OF LOVE',
+      creator: '동방신기',
+      price: 25000
     }
   ]
 }

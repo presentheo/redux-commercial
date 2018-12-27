@@ -13,26 +13,29 @@ const styles = {
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 260,
   },
 };
 
 function ProductCard(props) {
-  const { classes, name, price, onAddToCart } = props;
+  const { classes, name, creator, price, onAddToCart } = props;
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="https://static.stereogum.com/uploads/2018/09/queen-bohemian-rhapsody-soundtrack-1536163276-640x640.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h5">
             {name}
           </Typography>
           <Typography component="p">
-            {price}
+            {creator}
+          </Typography>
+          <Typography component="p">
+            {price+' won'}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -40,7 +43,7 @@ function ProductCard(props) {
         <Button 
           size="small" 
           color="primary"
-          onClick={() => onAddToCart({name:name, price:price})}>
+          onClick={() => onAddToCart({name:name, creator:creator, price:price})}>
           add to cart
         </Button>
       </CardActions>

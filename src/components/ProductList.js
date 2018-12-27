@@ -23,6 +23,7 @@ class ProductList extends Component {
             key={index}>
               <ProductCard
                 name={item.name}
+                creator={item.creator}
                 price={item.price}
                 onAddToCart={this.props.onAddToCart}/>
           </Grid>

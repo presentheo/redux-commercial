@@ -23,7 +23,7 @@ class Cart extends Component {
               </ListItemAvatar>
               <ListItemText
                 primary={item.name}
-                secondary={item.price}
+                secondary={item.creator}
               />
               <ListItemSecondaryAction>
                 <IconButton aria-label="Delete">
