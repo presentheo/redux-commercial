@@ -29,13 +29,3 @@ export const cart = (state = initialState, action) => {
     default: return state;
   }
 }
-
-
-// const ARRAY = [1,2,3,4,5]
-// function remove(arr,elem){
-//   return [
-//     ...arr.splice(0, arr.indexOf(elem)),
-//     ...arr.splice(arr.indexOf(elem)+1, arr.length)
-//   ]
-// }
-// remove(ARRAY, 4)

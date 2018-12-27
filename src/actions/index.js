@@ -13,3 +13,10 @@ export const removeFromCart = (index) => {
     index
   };
 }
+
+export const toggleDrawer = (open) => {
+  return {
+    type: types.TOGGLE_DRAWER,
+    open
+  }
+}

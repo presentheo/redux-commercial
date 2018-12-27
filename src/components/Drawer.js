@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -9,6 +8,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+
+import Cart from './Cart';
 
 const styles = {
   list: {
@@ -20,22 +21,6 @@ const styles = {
 };
 
 class Drawer extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      top: false,
-      left: false,
-      bottom: false,
-      right: true
-    }
-  }
-
-  toggleDrawer = (side, open) => () => {
-    this.setState({
-      [side]: open
-    })
-  }
-
 
   render() {
     const { classes } = this.props;
@@ -66,17 +51,20 @@ class Drawer extends Component {
       <div>
         <SwipeableDrawer
           anchor="right"
-          open={this.state.right}
-          onClose={this.toggleDrawer('right', false)}
-          onOpen={this.toggleDrawer('right', true)}
+          open={this.props.drawerState.right}
+          onClose={() => {this.props.onToggleDrawer(false)}}
+          onOpen={() => {this.props.onToggleDrawer(true)}}
+          BackdropProps={{invisible:true}}
         >
           <div
             tabIndex={0}
             role="button"
-            onClick={this.toggleDrawer('right', false)}
-            onKeyDown={this.toggleDrawer('right', false)}
+            onClick={() => {this.props.onToggleDrawer(false)}}
+            onKeyDown={() => {this.props.onToggleDrawer(false)}}
           >
-            {sideList}
+            <Cart 
+              cartData={this.props.cartData}
+              onRemoveFromCart={(index) => this.props.onRemoveFromCart(index)}/>
           </div>
         </SwipeableDrawer>        
       </div>

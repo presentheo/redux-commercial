@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import Cart from '../components/Cart';
 import ProductList from '../components/ProductList';
 import Header from '../components/Header';
 import Drawer from '../components/Drawer';
@@ -11,15 +10,17 @@ class Main extends Component {
     return (
       <div>
         <Header
+          onToggleDrawer={this.props.onToggleDrawer}
           count={this.props.cartData.length}/>
         <div className='main-visual'></div>
-        <Drawer/>
-        <Cart 
+        <Drawer
+          drawerState={this.props.drawerState}
+          onToggleDrawer={this.props.onToggleDrawer}
           cartData={this.props.cartData}
-          onRemoveFromCart={(index) => this.props.onRemoveFromCart(index)}/>
+          onRemoveFromCart={this.props.onRemoveFromCart}/>
         <ProductList 
           productData={this.props.productData}
-          onAddToCart={(item) => this.props.onAddToCart(item)}/>
+          onAddToCart={this.props.onAddToCart}/>
       </div>
     );
   }
@@ -28,14 +29,16 @@ class Main extends Component {
 const mapStateToProps = (state) => {
   return {
     productData: state.product.productData,
-    cartData: state.cart.cartData
+    cartData: state.cart.cartData,
+    drawerState: state.drawer
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onAddToCart: (item) => dispatch(actions.addToCart(item)),
-    onRemoveFromCart: (index) => dispatch(actions.removeFromCart(index))
+    onRemoveFromCart: (index) => dispatch(actions.removeFromCart(index)),
+    onToggleDrawer: (open) => dispatch(actions.toggleDrawer(open))
   }
 }
 

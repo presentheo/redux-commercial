@@ -11,6 +11,34 @@ const initialState = {
     {
       name: 'LMC Pupper',
       price: 250000
+    },
+    {
+      name: 'LMC Pupper',
+      price: 250000
+    },
+    {
+      name: 'LMC Pupper',
+      price: 250000
+    },
+    {
+      name: 'LMC Pupper',
+      price: 250000
+    },
+    {
+      name: 'LMC Pupper',
+      price: 250000
+    },
+    {
+      name: 'LMC Pupper',
+      price: 250000
+    },
+    {
+      name: 'LMC Pupper',
+      price: 250000
+    },
+    {
+      name: 'LMC Pupper',
+      price: 250000
     }
   ]
 }
