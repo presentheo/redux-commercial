@@ -23,6 +23,12 @@ const initialState = {
       creator: '옥상달빛',
       cover: 'https://sfs.synnara.co.kr/App/ImageViewerEShop?IID=M000367777&FMT=2&ATTACH=M&TYPE=B',
       price: 25000
+    },
+    {
+      name: '해야',
+      creator: '여자친구',
+      cover: 'https://sfs.synnara.co.kr/App/ImageViewerEShop?IID=M000367777&FMT=2&ATTACH=M&TYPE=B',
+      price: 25000
     }
   ]
 }

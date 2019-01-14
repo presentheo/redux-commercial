@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import ProductList from '../components/ProductList';
+import ProductDetail from '../components/ProductDetail';
 import Header from '../components/Header';
 import Drawer from '../components/Drawer';
 
@@ -21,6 +22,8 @@ class Main extends Component {
         <ProductList 
           productData={this.props.productData}
           onAddToCart={this.props.onAddToCart}/>
+        <ProductDetail
+          productData={this.props.productData}/>
       </div>
     );
   }

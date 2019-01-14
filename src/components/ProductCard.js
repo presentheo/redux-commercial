@@ -35,7 +35,7 @@ function ProductCard(props) {
             {props.creator}
           </Typography>
           <Typography component="p">
-            {props.price+' won'}
+            {props.price+'원'}
           </Typography>
         </CardContent>
       </CardActionArea>

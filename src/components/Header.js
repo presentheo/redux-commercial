@@ -25,7 +25,7 @@ class Header extends Component{
     const {classes} = this.props;
     return (
       <header className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="fixed">
           <Toolbar>
             <Typography variant="h6" color="inherit" className={classes.grow}>
               Redux-market

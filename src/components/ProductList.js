@@ -4,12 +4,12 @@ import Grid from '@material-ui/core/Grid';
 
 import ProductCard from './ProductCard';
 
-const styles = theme => ({
+const styles = (theme) => ({
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     color: theme.palette.text.secondary,
-  },
+  }
 });
 
 class ProductList extends Component {
