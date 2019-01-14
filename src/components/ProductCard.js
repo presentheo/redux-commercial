@@ -18,24 +18,24 @@ const styles = {
 };
 
 function ProductCard(props) {
-  const { classes, name, creator, price, onAddToCart } = props;
+  const { classes } = props;
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://static.stereogum.com/uploads/2018/09/queen-bohemian-rhapsody-soundtrack-1536163276-640x640.jpg"
+          image={props.cover}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h5">
-            {name}
+            {props.name}
           </Typography>
           <Typography component="p">
-            {creator}
+            {props.creator}
           </Typography>
           <Typography component="p">
-            {price+' won'}
+            {props.price+' won'}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -43,7 +43,7 @@ function ProductCard(props) {
         <Button 
           size="small" 
           color="primary"
-          onClick={() => onAddToCart({name:name, creator:creator, price:price})}>
+          onClick={() => props.onAddToCart(props)}>
           add to cart
         </Button>
       </CardActions>

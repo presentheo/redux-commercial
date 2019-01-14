@@ -28,7 +28,7 @@ class Header extends Component{
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              Melon Music Store
+              Redux-market
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={this.props.count} color="secondary">

@@ -1,18 +1,27 @@
 const initialState = {
   productData : [
     {
-      name: 'Supermassive Blackhole',
-      creator: 'Muse',
+      name: '행보 2018 윤종신',
+      creator: '윤종신',
+      cover: 'https://sfs.synnara.co.kr/App/ImageViewerEShop?IID=M000368013&FMT=2&ATTACH=M&TYPE=B',
       price: 25000
     },
     {
       name: 'Bohemian Rhapsody',
       creator: 'Queen',
+      cover: 'https://sfs.synnara.co.kr/App/ImageViewerEShop?IID=M000367769&FMT=2&ATTACH=M&TYPE=B',
       price: 25000
     },
     {
-      name: 'NEW CHAPTER #2: THE TRUTH OF LOVE',
-      creator: '동방신기',
+      name: '벌써 12시',
+      creator: '청하',
+      cover: 'https://sfs.synnara.co.kr/App/ImageViewerEShop?IID=M000367766&FMT=2&ATTACH=M&TYPE=B',
+      price: 25000
+    },
+    {
+      name: 'DAY / NIGHT [EP]',
+      creator: '옥상달빛',
+      cover: 'https://sfs.synnara.co.kr/App/ImageViewerEShop?IID=M000367777&FMT=2&ATTACH=M&TYPE=B',
       price: 25000
     }
   ]
