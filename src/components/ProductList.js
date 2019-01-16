@@ -26,7 +26,8 @@ class ProductList extends Component {
                 creator={item.creator}
                 price={item.price}
                 cover={item.cover}
-                onAddToCart={this.props.onAddToCart}/>
+                onAddToCart={this.props.onAddToCart}
+                onSelectItem={() => this.props.onSelectItem(index)}/>
           </Grid>
         )
       }) 

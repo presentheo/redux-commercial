@@ -21,7 +21,8 @@ function ProductCard(props) {
   const { classes } = props;
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea
+        onClick={props.onSelectItem}>
         <CardMedia
           className={classes.media}
           image={props.cover}

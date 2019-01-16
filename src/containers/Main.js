@@ -21,9 +21,12 @@ class Main extends Component {
           onRemoveFromCart={this.props.onRemoveFromCart}/>
         <ProductList 
           productData={this.props.productData}
-          onAddToCart={this.props.onAddToCart}/>
+          onAddToCart={this.props.onAddToCart}
+          onSelectItem={this.props.onSelectItem}/>
         <ProductDetail
-          productData={this.props.productData}/>
+          productData={this.props.productData[this.props.selectedKey]}
+          // key={this.props.selectedKey}
+          />
       </div>
     );
   }
@@ -31,6 +34,7 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    selectedKey: state.product.selectedKey,
     productData: state.product.productData,
     cartData: state.cart.cartData,
     drawerState: state.drawer
@@ -41,7 +45,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onAddToCart: (item) => dispatch(actions.addToCart(item)),
     onRemoveFromCart: (index) => dispatch(actions.removeFromCart(index)),
-    onToggleDrawer: (open) => dispatch(actions.toggleDrawer(open))
+    onToggleDrawer: (open) => dispatch(actions.toggleDrawer(open)),
+    onSelectItem: (index) => dispatch(actions.selectItem(index))
   }
 }
 

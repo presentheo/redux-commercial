@@ -1,4 +1,7 @@
+import * as types from '../actions/ActionTypes';
+
 const initialState = {
+  selectedKey: 0,
   productData : [
     {
       name: '행보 2018 윤종신',
@@ -33,6 +36,13 @@ const initialState = {
   ]
 }
 
-export const product = (state = initialState) => {
-  return state;
+export const product = (state = initialState, action) => {
+  switch (action.type) {
+    case types.SELECT_ITEM:
+    return {
+      selectedKey: action.index,
+      productData: [...state.productData]
+    } 
+    default: return state;
+  }
 }
