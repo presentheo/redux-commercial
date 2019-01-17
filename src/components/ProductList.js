@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+// import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import ProductCard from './ProductCard';
 
-const styles = (theme) => ({
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }
-});
+// const styles = (theme) => ({
+//   paper: {
+//     padding: theme.spacing.unit * 2,
+//     textAlign: 'center',
+//     color: theme.palette.text.secondary,
+//   }
+// });
 
 class ProductList extends Component {
 
@@ -19,15 +19,12 @@ class ProductList extends Component {
       return data.map((item, index) => {
         return (
           <Grid
-            item xs={12} sm={6} md={3}
-            key={index}>
+            key={index}
+            item xs={12} sm={6} md={3}>
               <ProductCard
-                name={item.name}
-                creator={item.creator}
-                price={item.price}
-                cover={item.cover}
-                onAddToCart={this.props.onAddToCart}
-                onSelectItem={() => this.props.onSelectItem(index)}/>
+                id={index}
+                product={item}
+                onAddToCart={this.props.onAddToCart}/>
           </Grid>
         )
       }) 
@@ -42,4 +39,5 @@ class ProductList extends Component {
   }
 }
 
-export default withStyles(styles)(ProductList);
+export default ProductList;
+// export default withStyles(styles)(ProductList);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -29,7 +30,9 @@ class Header extends Component{
         <AppBar position="fixed">
           <Toolbar>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              Redux-market
+              <Link to="/">
+                Redux Record <span role="img" aria-label="smiling face">😎</span>
+              </Link>
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={this.props.count} color="secondary">

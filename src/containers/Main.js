@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import * as actions from '../actions';
 import ProductList from '../components/ProductList';
 import ProductDetail from '../components/ProductDetail';
@@ -13,20 +14,25 @@ class Main extends Component {
         <Header
           onToggleDrawer={this.props.onToggleDrawer}
           count={this.props.cartData.length}/>
-        <div className='main-visual'></div>
         <Drawer
           drawerState={this.props.drawerState}
           onToggleDrawer={this.props.onToggleDrawer}
           cartData={this.props.cartData}
           onRemoveFromCart={this.props.onRemoveFromCart}/>
-        <ProductList 
-          productData={this.props.productData}
-          onAddToCart={this.props.onAddToCart}
-          onSelectItem={this.props.onSelectItem}/>
-        <ProductDetail
-          productData={this.props.productData[this.props.selectedKey]}
-          // key={this.props.selectedKey}
-          />
+        <Switch>
+          <Route exact path='/' render={() => {
+            return <ProductList 
+              productData={this.props.productData}
+              onAddToCart={this.props.onAddToCart}
+              onSelectItem={this.props.onSelectItem}/>
+            }}/>
+          <Route path='/detail/:id' render={(props) => {
+            return <ProductDetail
+              onAddToCart={this.props.onAddToCart}
+              productData={this.props.productData} {...props}/>
+            }
+          }/>
+        </Switch>
       </div>
     );
   }
@@ -50,4 +56,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

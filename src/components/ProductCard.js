@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -15,39 +16,49 @@ const styles = {
   media: {
     height: 260,
   },
+  button: {
+    marginRight: 10
+  }
 };
 
 function ProductCard(props) {
   const { classes } = props;
   return (
     <Card className={classes.card}>
-      <CardActionArea
-        onClick={props.onSelectItem}>
-        <CardMedia
-          className={classes.media}
-          image={props.cover}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h5">
-            {props.name}
-          </Typography>
-          <Typography component="p">
-            {props.creator}
-          </Typography>
-          <Typography component="p">
-            {props.price+'원'}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button 
-          size="small" 
-          color="primary"
-          onClick={() => props.onAddToCart(props)}>
-          add to cart
-        </Button>
-      </CardActions>
+      <Link to={`/detail/${props.id}`}>
+        <CardActionArea
+          onClick={props.onSelectItem}>
+          <CardMedia
+            className={classes.media}
+            image={props.product.cover}
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h5">
+              {props.product.name}
+            </Typography>
+            <Typography component="p">
+              {props.product.creator}
+            </Typography>
+            <Typography component="p">
+              {props.product.price+'원'}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button 
+            size="small" 
+            color="primary"
+            onClick={() => props.onAddToCart(props)}>
+            장바구니에 담기
+          </Button>
+          <Button 
+            size="small" 
+            color="primary">
+            바로 구매
+          </Button>
+        </CardActions>
+      </Link>
     </Card>
   );
 }
