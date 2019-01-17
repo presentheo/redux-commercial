@@ -25,11 +25,11 @@ function ProductCard(props) {
   const { classes } = props;
   return (
     <Card className={classes.card}>
-      <Link to={`/redux-record/detail/${props.product.id}`}>
+      <Link to={`/detail/${props.product.id}`}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={props.product.cover}
+            image={`/redux-record/images/cover-${props.product.id}.jpg`}
             title="Contemplative Reptile"
           />
           <CardContent>

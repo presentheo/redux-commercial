@@ -23,28 +23,26 @@ const styles = (theme) => ({
 
 
 class ProductDetail extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
-
-  componentDidMount(){
+  setProduct = () => {
     for(let i = 0; i<this.props.productData.length; i++) {
       if (this.props.productData[i].id === this.props.match.params.id) {
-        this.setState(this.props.productData[i])
+        return this.props.productData[i];
       }
     }
   }
 
   render() {
-    const product = this.state;
+    const product = this.setProduct();
     const {classes} = this.props;
 
     return (
       <div>
         <Grid className={classes.root} container spacing={24}>
           <Grid item xs={5}>
-            <img src={`/redux-record/detail/${product.id}`} style={{'width' : '100%'}} alt="z"></img>
+            <img 
+              src={`/redux-record/images/cover-${product.id}.jpg`} 
+              style={{'width' : '100%'}} 
+              alt="z"></img>
           </Grid>
           <Grid item xs={7}>
             <Typography className={classes.mainTitle} variant="h3">

@@ -30,7 +30,7 @@ class Header extends Component{
         <AppBar position="fixed">
           <Toolbar>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              <Link to="/redux-record">
+              <Link to="/">
                 Redux Record <span role="img" aria-label="smiling face">😎</span>
               </Link>
             </Typography>

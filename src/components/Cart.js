@@ -12,14 +12,17 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 class Cart extends Component {
   render() {
+    if (this.props.cartData.length < 1) {
+      return <p style={{'padding':'20px', 'color':'#aaa'}}>카트에 상품이 없습니다!</p>
+    }
     return (
       <List>
         {this.props.cartData.map((item, index) => {
           return (
-            <ListItem key={index}>
-              <Link to={`/redux-record/detail/${item.id}`}>
+            <Link to={`/detail/${item.id}`} key={index}>
+              <ListItem>
                 <ListItemAvatar>
-                  <Avatar src={item.cover}/>
+                  <Avatar src={`/redux-record/images/cover-${item.id}.jpg`}/>
                 </ListItemAvatar>
                 <ListItemText
                   primary={item.name}
@@ -30,8 +33,8 @@ class Cart extends Component {
                     <DeleteIcon onClick={() => {this.props.onRemoveFromCart(index)}}/>
                   </IconButton>
                 </ListItemSecondaryAction>
-              </Link>
-            </ListItem>
+              </ListItem>
+            </Link>
           )
         })}
       </List>

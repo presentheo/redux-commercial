@@ -5,7 +5,7 @@ import App from './App';
 import reducers from './reducers';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,9 +15,9 @@ let store = createStore(reducers);
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router>
       <App/>
-    </BrowserRouter>
+    </Router>
   </Provider>
   , document.getElementById('root'));
 
