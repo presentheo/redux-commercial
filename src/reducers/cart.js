@@ -1,13 +1,7 @@
 import * as types from '../actions/ActionTypes';
 
 const initialState = {
-  cartData : [
-    {
-      name: 'LOVE YOURSELF',
-      creator: '방탄소년단',
-      price: 25000
-    }
-  ]
+  cartData : []
 }
 
 export const cart = (state = initialState, action) => {

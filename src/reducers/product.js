@@ -4,39 +4,45 @@ const initialState = {
   selectedKey: 0,
   productData : [
     {
+      id: 'yoon',
       name: '행보 2018 윤종신',
       creator: '윤종신',
-      cover: '/images/cover-yoon.jpg',
+      cover: '/redux-record/images/cover-yoon.jpg',
       price: 20000
     },
     {
+      id: 'queen',
       name: 'Bohemian Rhapsody',
       creator: 'Queen',
-      cover: '/images/cover-queen.jpg',
+      cover: '/redux-record/images/cover-queen.jpg',
       price: 20000
     },
     {
+      id: 'chungha',
       name: '벌써 12시',
       creator: '청하',
-      cover: '/images/cover-chungha.jpg',
+      cover: '/redux-record/images/cover-chungha.jpg',
       price: 10000
     },
     {
+      id: 'okdal',
       name: 'DAY / NIGHT [EP]',
       creator: '옥상달빛',
-      cover: '/images/cover-okdal.jpg',
+      cover: '/redux-record/images/cover-okdal.jpg',
       price: 15000
     },
     {
+      id: 'punch',
       name: 'DREAM OF YOU',
       creator: 'PUNCH',
-      cover: '/images/cover-punch.jpg',
+      cover: '/redux-record/images/cover-punch.jpg',
       price: 10000
     },
     {
+      id: 'redvelvet',
       name: 'RBB',
       creator: 'RED VELVET',
-      cover: '/images/cover-redvelvet.jpg',
+      cover: '/redux-record/images/cover-redvelvet.jpg',
       price: 15000
     }
   ]

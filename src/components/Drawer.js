@@ -28,7 +28,6 @@ class Drawer extends Component {
           <div
             tabIndex={0}
             role="button"
-            // onClick={() => {this.props.onToggleDrawer(false)}}
             onKeyDown={() => {this.props.onToggleDrawer(false)}}
           >
             <Cart 

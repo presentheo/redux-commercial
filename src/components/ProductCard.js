@@ -25,9 +25,8 @@ function ProductCard(props) {
   const { classes } = props;
   return (
     <Card className={classes.card}>
-      <Link to={`/detail/${props.id}`}>
-        <CardActionArea
-          onClick={props.onSelectItem}>
+      <Link to={`/redux-record/detail/${props.product.id}`}>
+        <CardActionArea>
           <CardMedia
             className={classes.media}
             image={props.product.cover}
@@ -45,20 +44,20 @@ function ProductCard(props) {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          <Button 
-            size="small" 
-            color="primary"
-            onClick={() => props.onAddToCart(props)}>
-            장바구니에 담기
-          </Button>
-          <Button 
-            size="small" 
-            color="primary">
-            바로 구매
-          </Button>
-        </CardActions>
       </Link>
+      <CardActions>
+        <Button 
+          size="small" 
+          color="primary"
+          onClick={() => props.onAddToCart(props.product)}>
+          장바구니에 담기
+        </Button>
+        <Button 
+          size="small" 
+          color="primary">
+          바로 구매
+        </Button>
+      </CardActions>
     </Card>
   );
 }

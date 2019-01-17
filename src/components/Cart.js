@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -16,18 +17,20 @@ class Cart extends Component {
         {this.props.cartData.map((item, index) => {
           return (
             <ListItem key={index}>
-              <ListItemAvatar>
-                <Avatar src={item.cover}/>
-              </ListItemAvatar>
-              <ListItemText
-                primary={item.name}
-                secondary={item.creator}
-              />
-              <ListItemSecondaryAction>
-                <IconButton aria-label="Delete">
-                  <DeleteIcon onClick={() => {this.props.onRemoveFromCart(index)}}/>
-                </IconButton>
-              </ListItemSecondaryAction>
+              <Link to={`/redux-record/detail/${item.id}`}>
+                <ListItemAvatar>
+                  <Avatar src={item.cover}/>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={item.name}
+                  secondary={item.creator}
+                />
+                <ListItemSecondaryAction>
+                  <IconButton aria-label="Delete">
+                    <DeleteIcon onClick={() => {this.props.onRemoveFromCart(index)}}/>
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </Link>
             </ListItem>
           )
         })}

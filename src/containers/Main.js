@@ -20,16 +20,17 @@ class Main extends Component {
           cartData={this.props.cartData}
           onRemoveFromCart={this.props.onRemoveFromCart}/>
         <Switch>
-          <Route exact path='/' render={() => {
+          <Route exact path='/redux-record' render={() => {
             return <ProductList 
               productData={this.props.productData}
               onAddToCart={this.props.onAddToCart}
               onSelectItem={this.props.onSelectItem}/>
             }}/>
-          <Route path='/detail/:id' render={(props) => {
+          <Route path='/redux-record/detail/:id' render={(props) => {
             return <ProductDetail
               onAddToCart={this.props.onAddToCart}
-              productData={this.props.productData} {...props}/>
+              productData={this.props.productData} 
+              {...props}/>
             }
           }/>
         </Switch>
