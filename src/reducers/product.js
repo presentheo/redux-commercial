@@ -12,14 +12,16 @@ const initialState = {
 
 2018년은 그 어느 해보다도 ‘가수 윤종신’의 활약이 도드라졌던 해였다. 그는 2018년 한 해 동안 <월간 윤종신>을 통해 발표한 13곡 중 12곡을 직접 부르는 것은 물론, 특정 장르나 소재에 갇히지 않고 다양한 곡을 능수능란하게 소화해내면서 가수로서의 존재감에 무게를 더했다. ‘Frame’, ‘My Queen’, ‘Summer Man’, ‘떠나’, ‘Night Drive’ 등 완성도 높은 씨티팝을 연이어 선보이며 넓어졌고, ‘Slow Starter’, ‘이별톡’, ‘기댈게’, ‘벼락치기’ 등 누가 언제 들어도 윤종신의 인장을 발견할 수 있는 ‘윤종신표 발라드’를 이어나가며 깊어졌다. 
       `,
-      price: 20000
+      price: 20000,
+      quantity: 200
     },
     {
       id: 'queen',
       name: 'Bohemian Rhapsody',
       creator: 'Queen',
       comment: `전설에 의한, 전설을 위한 영화 팝 역사의 전설 Queen의 삶과 음악 여정\n\nBOHMEMIAN RHAPSODY - Original Sound Track\n\n영화 [보헤미안 랩소디] 사운드트랙`,
-      price: 20000
+      price: 20000,
+      quantity: 100
     },
     {
       id: 'chungha',
@@ -37,7 +39,8 @@ Hands on Me, Offset, Blooming Blue
 매혹적인 Flute 사운드가 커튼을 펼치듯 곡의 시작을 알리듯 울려 퍼지고, 이어지는 Pluck 사운드, 탄탄한 리듬 위에 청하의 목소리가 더해져 매력적이고 중독적인 EDM이 완성되었다.
 그대와 헤어져야만 하는 시간 12시가 가까워져만 오고 이제 가야만 하지만, 마음속 서로의 대화처럼 보내주기 싫은 상황을 도발적이고 솔직하게 표현한 곡이다.
       `,
-      price: 10000
+      price: 10000,
+      quantity: 1000
     },
     {
       id: 'okdal',
@@ -62,7 +65,8 @@ Composed by 박세진 Written by 박세진 Arranged by REPROJECT
 가끔은 나를 스쳐가는 모든 슬픔의 이유가 다 나 같아서 슬픈 날이 있다.
 Composed by 김윤주 Written by 김윤주 Arranged by 김윤주, 양영호
       `,
-      price: 15000
+      price: 15000,
+      quantity: 1000
     },
     {
       id: 'punch',
@@ -88,7 +92,8 @@ Composed by 김윤주 Written by 김윤주 Arranged by 김윤주, 양영호
 
 '밤이 되니까'이후 발표하는 신곡마다 주요 음원차트 상위권에 안착하며 신흥 음원강자로의 입지를 다졌다. 최근 발표한 '헤어지는 중' 역시 높은 순위를 유지하며 롱런 중이기에 펀치의 새 앨범 발매 소식에 많은 음악 팬들의 관심이 쏠리고 있다.
       `,
-      price: 10000
+      price: 10000,
+      quantity: 1000
     },
     {
       id: 'redvelvet',
@@ -103,7 +108,8 @@ Composed by 김윤주 Written by 김윤주 Arranged by 김윤주, 양영호
 
 더불어 레드벨벳은 지난 8월 서울에서 개최된 단독 콘서트 ‘REDMARE’를 시작으로 월드 투어에 돌입, 방콕, 타이베이, 싱가포르 등에서 성황리에 공연을 펼쳤으며, 내년 1월부터 후쿠오카, 고베, 요코하마 등에서 일본 첫 아레나 투어를 진행함은 물론, 2월에는 LA, 댈러스, 마이애미, 시카고, 뉴어크 등에서 미국 투어도 이어갈 예정이어서, ‘월드 클래스 걸그룹’의 진가를 확인시켜 줄 것으로 보인다.
       `,
-      price: 15000
+      price: 15000,
+      quantity: 5000
     }
   ]
 }

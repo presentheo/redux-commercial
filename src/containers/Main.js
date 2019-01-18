@@ -6,6 +6,7 @@ import ProductList from '../components/ProductList';
 import ProductDetail from '../components/ProductDetail';
 import Header from '../components/Header';
 import Drawer from '../components/Drawer';
+import Order from '../components/Order';
 
 class Main extends Component {
   render() {
@@ -33,6 +34,9 @@ class Main extends Component {
               {...props}/>
             }
           }/>
+          <Route path="/order" render={() => {
+            return <Order cartData={this.props.cartData}></Order>
+          }}/>
         </Switch>
       </div>
     );

@@ -11,7 +11,7 @@ import { Badge } from '@material-ui/core';
 const styles = {
   root: {
     flexGrow: 1,
-    marginBottom: '60px'
+    paddingBottom: 60
   },
   grow: {
     flexGrow: 1,

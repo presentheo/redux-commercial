@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -63,7 +64,13 @@ class ProductDetail extends Component {
                 className={classes.button} 
                 variant='contained' 
                 color="primary">장바구니에 담기</Button>
-              <Button className={classes.button} variant='contained' color="primary">바로 구매</Button>
+              <Button 
+                onClick={() => this.props.onAddToCart(product)}
+                component={Link}
+                to="/order"
+                className={classes.button} 
+                variant='contained' 
+                color="primary">바로 구매</Button>
             </div>
           </Grid>
         </Grid>
