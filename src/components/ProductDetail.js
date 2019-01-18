@@ -13,7 +13,10 @@ const styles = (theme) => ({
   },
   caption: {
     marginTop: 20,
-    marginBottom: 20
+    marginBottom: 20,
+    fontSize: 14,
+    lineHeight: 1.4,
+    whiteSpace: 'pre-wrap'
   },
   mainTitle: {
     marginBottom: 10,
@@ -51,7 +54,9 @@ class ProductDetail extends Component {
             <Typography variant='h6'>
               {product.creator}
             </Typography>
-            <p className={classes.caption}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis omnis nostrum fugiat magni, explicabo accusamus perspiciatis ipsum quos officia ea, unde iste suscipit, corrupti veniam error excepturi asperiores aspernatur quam.</p>
+            <p className={classes.caption}>
+              {product.comment}
+            </p>
             <div>
               <Button 
                 onClick={() => this.props.onAddToCart(product)}
