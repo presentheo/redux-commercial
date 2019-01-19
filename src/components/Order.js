@@ -39,9 +39,13 @@ const styles = theme => ({
     fontSize: 14,
     color: '#aaa'
   },
-  orderButton: {
-    display: 'block',
-    margin: 'auto'
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  sum: {
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 });
 
@@ -53,7 +57,7 @@ class Order extends Component {
 
     const getSum = () => {
       let sum = 0;
-      this.props.cartData.map(e => {return sum += e.price;})
+      this.props.cartData.map(e => {return sum += (e.price*e.quantity);})
       return sum;
     }
 
@@ -65,7 +69,9 @@ class Order extends Component {
           <TableHead>
             <TableRow>
               <TableCell>상품정보</TableCell>
-              <TableCell>가격</TableCell>
+              <TableCell>개당 가격</TableCell>
+              <TableCell>수량</TableCell>
+              <TableCell>총 가격</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -81,17 +87,24 @@ class Order extends Component {
                   </Link>
                 </TableCell>
                 <TableCell>{item.price}</TableCell>
+                <TableCell>{item.quantity}</TableCell>
+                <TableCell>{(item.price*item.quantity)}</TableCell>
               </TableRow>
             })}
             <TableRow>
               <TableCell>합계</TableCell>
-              <TableCell>{getSum()}</TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell className={classes.sum}>{getSum()}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
       </Paper>
-      <div>
+      <div className={classes.buttonContainer}>
         <Button 
+          onClick={this.props.onCheckout}
+          component={Link}
+          to="/order/success"
           className={classes.orderButton}
           size="large"
           variant="contained"

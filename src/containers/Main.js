@@ -7,6 +7,7 @@ import ProductDetail from '../components/ProductDetail';
 import Header from '../components/Header';
 import Drawer from '../components/Drawer';
 import Order from '../components/Order';
+import OrderSuccess from '../components/OrderSuccess';
 
 class Main extends Component {
   render() {
@@ -29,14 +30,17 @@ class Main extends Component {
             }}/>
           <Route path='/detail/:id' render={(props) => {
             return <ProductDetail
+              productData={this.props.productData}
               onAddToCart={this.props.onAddToCart}
-              productData={this.props.productData} 
               {...props}/>
             }
           }/>
-          <Route path="/order" render={() => {
-            return <Order cartData={this.props.cartData}></Order>
+          <Route exact path="/order" render={() => {
+            return <Order 
+              cartData={this.props.cartData}
+              onCheckout={this.props.onCheckout}/>
           }}/>
+          <Route path="/order/success" component={OrderSuccess}/>
         </Switch>
       </div>
     );
@@ -54,10 +58,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAddToCart: (item) => dispatch(actions.addToCart(item)),
+    onAddToCart: (item, quantity) => dispatch(actions.addToCart(item, quantity)),
     onRemoveFromCart: (index) => dispatch(actions.removeFromCart(index)),
     onToggleDrawer: (open) => dispatch(actions.toggleDrawer(open)),
-    onSelectItem: (index) => dispatch(actions.selectItem(index))
+    onSelectItem: (index) => dispatch(actions.selectItem(index)),
+    onCheckout: () => dispatch(actions.checkout())
   }
 }
 

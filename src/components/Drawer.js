@@ -36,7 +36,7 @@ class Drawer extends Component {
           <Cart 
             cartData={this.props.cartData}
             onRemoveFromCart={(index) => this.props.onRemoveFromCart(index)}/>
-          <Button variant="contained" color="primary" fullWidth="true">
+          <Button variant="contained" color="primary" fullWidth={true}>
             <Link to="/order">구매하기</Link>
           </Button>
         </div>

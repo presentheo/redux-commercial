@@ -1,8 +1,9 @@
 import * as types from './ActionTypes';
 
-export const addToCart = (item) => {
+export const addToCart = (item, quantity) => {
   return {
     type: types.ADD_TO_CART,
+    quantity,
     item
   };
 }
@@ -12,6 +13,12 @@ export const removeFromCart = (index) => {
     type: types.REMOVE_FROM_CART,
     index
   };
+}
+
+export const checkout = () => {
+  return {
+    type: types.CHECKOUT
+  }
 }
 
 export const selectItem = (index) => {
